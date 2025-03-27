@@ -1,0 +1,356 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cloudy_bg"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/forest_cloudy" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:layoutDirection="inherit"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/currTemp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/source_sans_pro_semibold"
+                android:text="--°"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                android:textColor="@color/white"
+                android:textSize="96sp"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/weatherDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="@font/source_sans_pro_semibold"
+                android:text="CLOUDY"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+
+        </LinearLayout>
+
+        <AutoCompleteTextView
+            android:id="@+id/locationName"
+            style="@style/Widget.AppCompat.AutoCompleteTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginBottom="24dp"
+            android:imeOptions="actionDone"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="Location"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textColorLink="#FFFFFF"
+            android:textSize="20sp" />
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="81dp"
+        android:layout_gravity="fill_horizontal"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/minTempText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/source_sans_pro_semibold"
+                android:text="--°"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/source_sans_pro_semibold"
+                android:text="min"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/currTempText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/source_sans_pro_semibold"
+                android:text="--°"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/source_sans_pro_semibold"
+                android:text="Current"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/maxTempText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/source_sans_pro_semibold"
+                android:text="--°"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/source_sans_pro_semibold"
+                android:text="max"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/dayParent"
+        android:layout_width="match_parent"
+        android:layout_height="399dp"
+        android:layout_gravity="fill_horizontal|fill_vertical"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingLeft="25sp"
+            android:paddingRight="25sp">
+
+            <TextView
+                android:id="@+id/day1"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/source_sans_pro_semibold"
+                android:text="SATURDAY"
+                android:textAlignment="textStart"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/icon1"
+                android:layout_width="84dp"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/ic_dialog_alert" />
+
+            <TextView
+                android:id="@+id/temp1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="--°"
+                android:textAlignment="textEnd"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingLeft="25sp"
+            android:paddingRight="25sp">
+
+            <TextView
+                android:id="@+id/day2"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/source_sans_pro_semibold"
+                android:text="SUNDAY"
+                android:textAlignment="textStart"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/icon2"
+                android:layout_width="84dp"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/ic_dialog_alert" />
+
+            <TextView
+                android:id="@+id/temp2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="--°"
+                android:textAlignment="textEnd"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingLeft="25sp"
+            android:paddingRight="25sp">
+
+            <TextView
+                android:id="@+id/day3"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/source_sans_pro_semibold"
+                android:text="MONDAY"
+                android:textAlignment="textStart"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/icon3"
+                android:layout_width="84dp"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/ic_dialog_alert" />
+
+            <TextView
+                android:id="@+id/temp3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="--°"
+                android:textAlignment="textEnd"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingLeft="25sp"
+            android:paddingRight="25sp">
+
+            <TextView
+                android:id="@+id/day4"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/source_sans_pro_semibold"
+                android:text="THURSDAY"
+                android:textAlignment="textStart"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/icon4"
+                android:layout_width="84dp"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/ic_dialog_alert" />
+
+            <TextView
+                android:id="@+id/temp4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="--°"
+                android:textAlignment="textEnd"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingLeft="25sp"
+            android:paddingRight="25sp">
+
+            <TextView
+                android:id="@+id/day5"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/source_sans_pro_semibold"
+                android:text="WEDNESDAY"
+                android:textAlignment="textStart"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:id="@+id/icon5"
+                android:layout_width="84dp"
+                android:layout_height="wrap_content"
+                app:srcCompat="@android:drawable/ic_dialog_alert" />
+
+            <TextView
+                android:id="@+id/temp5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="--°"
+                android:textAlignment="textEnd"
+                android:textColor="@color/white"
+                android:textSize="24sp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>
